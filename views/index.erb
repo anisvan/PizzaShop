@@ -1,0 +1,18 @@
+<h2>welcome to pizza shop</h2>
+<button class="btn btn-primary" onclick="foo()">click me</button>
+
+
+
+<script>
+
+ function foo() 
+ {
+ 	var x = window.localStorage.getItem('bb');
+ 	x = x*1 + 1;
+
+ 	window.localStorage.setItem('bb', x);
+
+    alert(x);
+  }
+
+</script>
