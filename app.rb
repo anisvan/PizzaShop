@@ -11,5 +11,15 @@ class Product < ActiveRecord::Base
 end
 
 get '/' do
+	@products = Product.all
 	erb :index
+end
+
+get '/products' do
+  @products = Product.all
+  erb :products
+end
+
+post '/cart' do
+	erb :cart
 end

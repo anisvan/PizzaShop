@@ -1,18 +1,33 @@
 <h2>welcome to pizza shop</h2>
-<button class="btn btn-primary" onclick="foo()">click me</button>
+<!-- <p><button class="btn btn-primary" onclick="add_to_cart()">Добавить в корзину</button></p> -->
+
+<div class="row">
+
+	<% @products.each do |p| %>
+		<div class="col-md-3">
+			<div>
+			<h4><%= p.title %></h4>
+			</div>
+			<div >
+				<img height="200" width="200" src="<%= p.path_to_image %>"/>
+			</div>
+			<div >
+				<%= p.description %>
+			</div>
+			<div >
+				Размер: <%= p.size %> см
+			</div>
+			<div >
+				Цена: <%= p.price %> руб
+			</div>
+			<div >
+				<button class="btn btn-sm btn-success" onclick="add_to_cart(<%= p.id %>)">Добавить в корзину</button>
+			</div>
+		</br>
+		</div>
+	<% end %>
+
+</div>
 
 
 
-<script>
-
- function foo() 
- {
- 	var x = window.localStorage.getItem('bb');
- 	x = x*1 + 1;
-
- 	window.localStorage.setItem('bb', x);
-
-    alert(x);
-  }
-
-</script>
